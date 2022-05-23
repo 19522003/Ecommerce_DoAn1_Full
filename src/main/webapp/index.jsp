@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@page import="java.sql.*"%>
+<%@page import="com.DB.*"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -27,9 +29,13 @@
 	<div class="container-fluid back-img">
 		<h2 class="text-center text-danger">Ecommerce Management System</h2>
 	</div>
+	
+	<%Connection conn = DBConnect.getConnection(); 
+	  out.println(conn);%>
+	
 	<!-- Start Recent-->
 	<div class="container">
-		<h3 class="text-center">Recenct</h3>
+		<h3 class="text-center">Recent</h3>
 		<div class="row">
 			<div class="col-md-3">
 				<div class= "card crd-ho">

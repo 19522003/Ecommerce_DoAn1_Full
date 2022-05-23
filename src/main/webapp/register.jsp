@@ -45,7 +45,7 @@
 	</div>
 </div>
 <div class="container-fluid text-center text-white p-3" style="background-color: #0000a0; margin-top: 11rem">
-	<h5>©Design and Develop by Thanh Phat & Tan Viet</h5>
+	<h5>©Design and Develop by ThanhPhat_TanViet</h5>
 </div>
 </body>
 </html>
