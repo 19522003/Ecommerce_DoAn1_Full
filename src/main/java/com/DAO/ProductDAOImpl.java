@@ -2,6 +2,9 @@ package com.DAO;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
 
 import com.entity.Products;
 
@@ -38,5 +41,59 @@ public class ProductDAOImpl implements ProductDAO{
 			return false;
 		}
 	}
+
+	public List<Products> getAllBooks() {
+		
+		List<Products> list = new ArrayList<Products>();
+		Products p = null;
+		try {
+			String sql = "Select * from product_dt";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ResultSet rs = ps.executeQuery();
+			while(rs.next()) {
+				p = new Products();
+				p.setProductID(rs.getInt(1));
+				p.setProductName(rs.getString(2));
+				p.setGender(rs.getString(3));
+				p.setPrice(rs.getString(4));
+				p.setProductCategory(rs.getString(5));
+				p.setStatus(rs.getString(6));
+				p.setPhotoName(rs.getString(7));
+				p.setEmail(rs.getString(8));
+				list.add(p);
+			}
+		}catch(Exception e) {
+			
+		}
+		
+		return list;
+		
+	}
+
+	public Products getProductbyID(int id) {
+		Products p = null;
+		try {
+			String sql="select * from product_dt where productId = ?";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setInt(1, id);
+			ResultSet rs = ps.executeQuery();
+			while(rs.next()) {
+				p = new Products();
+				p.setProductID(rs.getInt(1));
+				p.setProductName(rs.getString(2));
+				p.setGender(rs.getString(3));
+				p.setPrice(rs.getString(4));
+				p.setProductCategory(rs.getString(5));
+				p.setStatus(rs.getString(6));
+				p.setPhotoName(rs.getString(7));
+				p.setEmail(rs.getString(8));
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return p;
+	}
+	
+	
 	
 }
