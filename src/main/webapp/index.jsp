@@ -30,8 +30,7 @@
 		<h2 class="text-center text-danger">Ecommerce Management System</h2>
 	</div>
 	
-	<%Connection conn = DBConnect.getConnection(); 
-	  out.println(conn);%>
+	
 	
 	<!-- Start Recent-->
 	<div class="container">
