@@ -20,20 +20,13 @@
 				<div class="card mt-5">
 					<div class="card-body">
 						<h4 class="text-center">Edit Products</h4>
-						<c:if test="${not empty succMsg }">
-							<p class="text-center text-success">${succMsg}</p>
-							<c:remove var="succMsg" scope="session"/>
-						</c:if>
-						<c:if test="${not empty failedMsg }">
-							<p class="text-center text-danger">${failedMsg}</p>
-							<c:remove var="failedMsg" scope="session"/>
-						</c:if>
+						
 						<%int id = Integer.parseInt(request.getParameter("id")); 
 							ProductDAOImpl dao = new ProductDAOImpl(DBConnect.getConnection());
 							Products p = dao.getProductbyID(id);
 						%>
-						<form action="../add_products" method="post"
-							enctype="multipart/form-data">
+						<form action="../edit_products" method="post">
+							<input type="hidden" name="id" value="<%=p.getProductID()%>">
 							<div class="form-group">
 								<label for="exampleInputEmail1" class="form-label">Product
 									name</label> <input type="text" class="form-control"
@@ -68,19 +61,12 @@
 									%>
 								</select>
 							</div>
-							<div class="form-group">
-								<label for="inputState" class="form-label">Upload Photo</label>
-								<input type="file" name="img" class="form-control">
-							</div>
 							<button type="submit" class="btn btn-primary mt-2">Update</button>
 						</form>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
-	<div class="container-fluid text-center text-white p-3" style="background-color: #0000a0; margin-top: 4.4rem">
-		<h5>©Design and Develop by ThanhPhat_TanViet</h5>
 	</div>
 </body>
 </html>

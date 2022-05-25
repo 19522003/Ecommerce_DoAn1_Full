@@ -21,6 +21,10 @@
 						<h5 class="text-center text-danger">${failedMsg}</h5>
 						<c:remove var="failedMsg" scope="session"/>
 					</c:if>
+					<c:if test="${not empty SuccessMSG }">
+						<h5 class="text-center text-success">${SuccessMSG}</h5>
+						<c:remove var="SuccessMSG" scope="session"/>
+					</c:if>
 					<form action="login" method="post">
 					<div class="form-group">
     					<label for="exampleInputEmail1">Email address</label>

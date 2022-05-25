@@ -93,7 +93,45 @@ public class ProductDAOImpl implements ProductDAO{
 		}
 		return p;
 	}
-	
+
+	public boolean editProducts(Products p) {
+		boolean f= false;
+		try {
+			String sql = "Update product_dt set productname=?, gender= ?, price= ?, status = ? where productId = ?";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setString(1,p.getProductName());
+			ps.setString(2,p.getGender());
+			ps.setString(3,p.getPrice());
+			ps.setString(4,p.getStatus());
+			ps.setInt(5,p.getProductID());
+			
+			int i = ps.executeUpdate();
+			if(i == 1) {
+				f = true;
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return f;
+	}
+
+	public boolean deleteProducts(int id) {
+		try {
+			String sql = "DELETE FROM product_dt WHERE productId = ?";
+			PreparedStatement preparedStatement = conn.prepareStatement(sql);
+			preparedStatement.setInt(1, id);
+			if (preparedStatement.executeUpdate() == 1) {
+				return true;
+			} else {
+				return false;
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			return false;
+		}
+	}
 	
 	
 }

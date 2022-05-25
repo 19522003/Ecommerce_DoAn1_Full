@@ -19,6 +19,9 @@
 </head>
 <body>
 <%@include file="navbar.jsp" %>
+<c:if test="${empty userobj}">
+	<c:redirect url="../login.jsp"/>
+</c:if>
 	<div style="margin-top: 200px">
 	<div class="container">
 		<div class= "row p-5">
@@ -56,7 +59,7 @@
 				</a>
 			</div>
 			<div class="col-md-3">
-				<a>
+				<a data-toggle="modal" data-target="#exampleModalCenter">
 				<div class="card">
 					<div class="card-body text-center">
 						<i class="fas fa-sign-out-alt fa-3x text-primary"></i><br>
@@ -69,6 +72,30 @@
 		</div>
 	</div>
 	</div>
+	<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle"></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      	<div class="text-center">
+      		 <h4 style="margin-bottom: 30px">Are you sure to logout ?</h4>
+       		<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+        	<a href="../logout" type="button" class="btn btn-primary text-white">Logout</a>
+      	</div>
+      </div>
+      <div class="modal-footer">
+  
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End Modal -->
 	<div class="container-fluid text-center text-white p-3" style="background-color: #0000a0; margin-top: 19.9rem">
 		<h5>©Design and Develop by ThanhPhat_TanViet</h5>
 	</div>
