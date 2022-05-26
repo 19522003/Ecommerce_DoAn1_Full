@@ -51,9 +51,7 @@ public class UserDAOImpl implements UserDAO {
 				us.setLandmark(rs.getString(7));
 				us.setCity(rs.getString(8));
 				us.setState(rs.getString(9));
-				us.setPincode(rs.getString(10));
-				
-				
+				us.setPincode(rs.getString(10));		
 			}
 		} catch (Exception e) {
 			e.printStackTrace();

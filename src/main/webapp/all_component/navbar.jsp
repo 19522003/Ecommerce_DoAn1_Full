@@ -27,16 +27,16 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="index.jsp">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="#"><i class="fas fa-tshirt"></i> Recent</a>
+        <a class="nav-link" href="all_recent_products.jsp"><i class="fas fa-tshirt"></i> Recent</a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="#"><i class="fas fa-tshirt"></i> New</a>
+        <a class="nav-link" href="all_new_products.jsp"><i class="fas fa-tshirt"></i> New</a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link disabled" href="#"><i class="fas fa-tshirt"></i> Old</a>
+        <a class="nav-link disabled" href="all_old_products.jsp"><i class="fas fa-tshirt"></i> Old</a>
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">

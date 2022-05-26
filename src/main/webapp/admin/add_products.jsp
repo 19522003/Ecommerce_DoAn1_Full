@@ -50,8 +50,8 @@
 									categories</label> <select name="category" id="inputState"
 									class="form-control">
 									<option selected>--Select---</option>
-									<option value="Clothes">Clothes</option>
-									<option value="Fashion accessories">Fashion accessories</option>
+									<option value="New">New</option>
+									<option value="Old">Old</option>
 								</select>
 							</div>
 							<div class="form-group">

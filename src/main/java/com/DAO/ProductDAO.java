@@ -12,4 +12,16 @@ public interface ProductDAO {
 	public boolean editProducts(Products p);
 	
 	public boolean deleteProducts(int id);
+	
+	public List<Products> getNewProducts();
+	
+	public List<Products> getRecentProducts();
+	
+	public List<Products> getOldProducts();
+	
+	public List<Products> getAllRecentProducts();
+	
+	public List<Products> getAllNewProducts();
+	
+	public List<Products> getAllOldProducts();
 }
