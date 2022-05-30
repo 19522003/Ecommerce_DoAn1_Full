@@ -114,7 +114,7 @@
 						<%}else{%>
 							<a href="cart?pid=<%=p.getProductID()%>&&uid=<%=u.getId()%>" class="btn btn-custom btn-sm ml-1"><i class="fas fa-cart-plus"></i> Add Cart</a>
 						<%}%>
-							<a href="" class="btn btn-success btn-sm ml-1">View Detail</a>
+							<a href="view_product.jsp?pid=<%=p.getProductID()%>" class="btn btn-success btn-sm ml-1">View Detail</a>
 						</div>
 					</div>
 				</div>

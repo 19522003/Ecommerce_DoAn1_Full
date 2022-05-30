@@ -24,4 +24,6 @@ public interface ProductDAO {
 	public List<Products> getAllNewProducts();
 	
 	public List<Products> getAllOldProducts();
+	
+	public List<Products> getProductBySearch(String ch);
 }

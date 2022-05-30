@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ page isELIgnored="false"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,17 +20,22 @@ a:hover {
 </style>
 </head>
 <body>
+	<c:if test="${empty userobj }">
+		<c:redirect url="login.jsp"></c:redirect>
+	</c:if>
 	<%@include file="all_component/navbar.jsp"%>
 	<div class="container">
-		<h3 class="text-center">Hello, User</h3>
+		<c:if test="${not empty userobj}">
+			<h3 class="text-center">Hello, ${userobj.name}</h3>
+		</c:if>
 		<div class="row p-5">
-			<div class="col-md-6">
+			<div class="col-md-12">
 				<a href="edit_profile.jsp">
 					<div class="card">
 						<div class="card-body text-center">
 							<div class="text-primary">
 								<i class="fas fa-address-card fa-3x"></i>
-								
+
 							</div>
 							<h3>Login & Security</h3>
 							<p>Edit Profile</p>
@@ -36,19 +43,7 @@ a:hover {
 					</div>
 				</a>
 			</div>
-			<div class="col-md-6">
-				<a href="user_address.jsp">
-					<div class="card">
-						<div class="card-body text-center">
-							<div class="text-warning">
-								<i class="fas fa-map-marker-alt fa-3x"></i>
-							</div>
-							<h3>Your Address</h3>
-							<p>Edit Address</p>
-						</div>
-					</div>
-				</a>
-			</div>
+			
 			<div class="col-md-6 mt-3">
 				<a href="order.jsp">
 					<div class="card">
@@ -66,7 +61,7 @@ a:hover {
 				<a href="help.jsp">
 					<div class="card">
 						<div class="card-body text-center">
-							<div class="text-primary">
+							<div class="text-warning">
 								<i class="fas fa-user-circle fa-3x"></i>
 							</div>
 							<h3>Help Center</h3>

@@ -1,3 +1,8 @@
+<%@page import="com.entity.Product_Order"%>
+<%@page import="java.util.List"%>
+<%@page import="com.entity.User"%>
+<%@page import="com.DB.DBConnect"%>
+<%@page import="com.DAO.ProductOrderDAOImpl"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -9,6 +14,9 @@
 </head>
 <body>
 	<%@include file="all_component/navbar.jsp"%>
+	<c:if test="${empty userobj }">
+		<c:redirect url="login.jsp"></c:redirect>
+	</c:if>
 	<div class="container p-1">
 		<h3 class="text-center text-primary">Your Order</h3>
 		<table class="table table-striped mt-5">
@@ -23,14 +31,23 @@
 				</tr>
 			</thead>
 			<tbody>
+				<%
+				User u = (User) session.getAttribute("userobj");
+				ProductOrderDAOImpl dao = new ProductOrderDAOImpl(DBConnect.getConnection());
+				List<Product_Order> plist = dao.getProduct(u.getEmail());
+				for (Product_Order p : plist) {
+				%>
 				<tr>
-					<th scope="row">1</th>
-					<td>Mark</td>
-					<td>Otto</td>
-					<td>@mdo</td>
-					<td>Mark</td>
-					<td>Otto</td>
+					<th scope="row"><%=p.getOrderId()%></th>
+					<td><%=p.getUserName()%></td>
+					<td><%=p.getProductName()%></td>
+					<td><%=p.getGender()%></td>
+					<td><%=p.getPrice()%></td>
+					<td><%=p.getPaymentType()%></td>
 				</tr>
+				<%
+				}
+				%>
 			</tbody>
 		</table>
 	</div>

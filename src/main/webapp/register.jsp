@@ -22,7 +22,7 @@
 						<c:remove var="succMsg" scope="session"/>
 					</c:if>
 					<c:if test="${not empty failedMsg }">
-						<p class="text-center text-success">${failedMsg }</p>
+						<p class="text-center text-danger">${failedMsg }</p>
 						<c:remove var="failedMsg" scope="session"/>
 					</c:if>
 					<form action = "register" method="post">

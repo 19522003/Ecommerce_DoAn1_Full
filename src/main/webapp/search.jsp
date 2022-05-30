@@ -30,15 +30,16 @@
 </style>
 </head>
 <body>
-	<%@include file="all_component/navbar.jsp"%>
 	<%
 	User u = (User) session.getAttribute("userobj");
 	%>
+	<%@include file="all_component/navbar.jsp"%>
 	<div class="container-fluid">
 		<div class="row p-5">
 			<%
+			String ch = request.getParameter("ch");
 			ProductDAOImpl dao = new ProductDAOImpl(DBConnect.getConnection());
-			List<Products> list = dao.getAllRecentProducts();
+			List<Products> list = dao.getProductBySearch(ch);
 			for (Products p : list) {
 			%>
 			<div class="col-md-3">
@@ -76,7 +77,6 @@
 							<%
 							}
 							%>
-
 							<a href="view_product.jsp?pid=<%=p.getProductID()%>"
 								class="btn btn-success btn-sm ml-1">View Detail</a>
 						</div>

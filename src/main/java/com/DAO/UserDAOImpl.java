@@ -58,5 +58,57 @@ public class UserDAOImpl implements UserDAO {
 		}
 		return us;
 	}
+
+	public boolean checkPassword(int id, String ps) {
+		boolean f= false;
+		try {
+			String sql = "select * from user where id=? and password = ?";
+			PreparedStatement pst = conn.prepareStatement(sql);
+			pst.setInt(1,id);
+			pst.setString(2,ps);
+			ResultSet rs = pst.executeQuery();
+			while(rs.next()) {
+				f = true;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return f;
+	}
+
+	public boolean updateProfile(User us) {
+		try {
+			String sql = "update user set name=?,email=?,phone=? where id =?";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setString(1,us.getName());
+			ps.setString(2,us.getEmail());
+			ps.setString(3,us.getPhone());
+			ps.setInt(4,us.getId());
+			if (ps.executeUpdate() != 1) {
+				return false;
+			}	
+		} catch (Exception e) {
+			e.printStackTrace();
+			return false;
+		}
+		return true;
+	}
+
+	public boolean checkUser(String em) {
+		boolean f=true;
+		try {
+			String sql = "select * from user where email=?";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setString(1,em);
+			ResultSet rs = ps.executeQuery();
+			while(rs.next()) {
+				f=false;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return f;
+	}
+	
 	
 }

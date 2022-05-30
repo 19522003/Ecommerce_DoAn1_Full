@@ -5,7 +5,7 @@
 	<div class="row">
 		<div class="col-md-3 text-success">
 			<h3>
-				<a href="index.jsp" style="text-decoration: none; color: green;"><i class="fas fa-tshirt"></i> Ecommerce</a>
+				<a href="#" style="text-decoration: none; color: green;"><i class="fas fa-tshirt"></i> Ecommerce</a>
 			</h3>
 		</div>
 		<div class="col-md-3">

@@ -141,7 +141,7 @@
 						<p style="color: orange"><%=p.getPrice()%></p>
 						<%if(p.getProductCategory().equals("Old")){%>
 						<div class="row" style="justify-content: center">
-							<a href="" class="btn btn-success btn-sm ml-1">View Detail</a>
+							<a href="view_product.jsp?pid=<%=p.getProductID()%>" class="btn btn-success btn-sm ml-1">View Detail</a>
 						</div>
 						<%} else {%>
 						<!-- <p><%=p.getProductCategory()%></p> -->

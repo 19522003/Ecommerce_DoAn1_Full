@@ -21,33 +21,40 @@ public class RegisterServlet extends HttpServlet {
 			String phone = req.getParameter("phone");
 			String password = req.getParameter("password");
 			String check = req.getParameter("check");
-			//System.out.println(name + " " + email + " " + password + " " + phone + " " + check);
-			User us = new User ();
+			// System.out.println(name + " " + email + " " + password + " " + phone + " " +
+			// check);
+			User us = new User();
 			us.setName(name);
 			us.setEmail(email);
 			us.setPhone(phone);
 			us.setPassword(password);
-			
+
 			HttpSession session = req.getSession();
-			
-			if(check!=null) {
+
+			if (check != null) {
 				UserDAOImpl dao = new UserDAOImpl(DBConnect.getConnection());
-				boolean f = dao.userRegister(us);
-				if(f == true) {
-					session.setAttribute("succMsg", "Register Success...");
-					resp.sendRedirect("register.jsp");
-				}else {
-					session.setAttribute("failedMsg", "Something wrong!!!");
+				boolean f2 = dao.checkUser(email);
+				if (f2) {
+					boolean f = dao.userRegister(us);
+					if (f) {
+						session.setAttribute("succMsg", "Register Success...");
+						resp.sendRedirect("register.jsp");
+					} else {
+						session.setAttribute("failedMsg", "Something wrong!!!");
+						resp.sendRedirect("register.jsp");
+					}
+				} else {
+					session.setAttribute("failedMsg", "User Already Exist!!!");
 					resp.sendRedirect("register.jsp");
 				}
-			}else {
-				System.out.println("Please check");
-			}	
-			
+			} else {
+				session.setAttribute("failedMsg", "Please check agree & term condition!!!");
+				resp.sendRedirect("register.jsp");
+			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
+
 	}
-	
+
 }

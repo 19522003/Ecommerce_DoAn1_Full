@@ -56,7 +56,7 @@
 									<td><%=c.getGender()%></td>
 									<td><%=c.getPrice()%></td>
 									<td>
-										<a href="remove_product?pid=<%=c.getPid()%>&&uid=<%=c.getUserId()%>" class="btn btn-sm btn-danger">Remove</a>
+										<a href="remove_product?pid=<%=c.getPid()%>&&uid=<%=c.getUserId()%>&&cid=<%=c.getCid()%>" class="btn btn-sm btn-danger">Remove</a>
 									</td>
 								</tr>
 								<%
@@ -77,51 +77,52 @@
 				<div class="card bg-white">
 					<div class="card-body">
 						<h3 class="text-center text-success">Your details for order</h3>
-						<form>
+						<form action="order" method="post">
+						<input type="hidden" value="${userobj.id}" name="id">
 							<div class="form-row">
 								<div class="form-group col-md-6">
 									<label for="inputEmail4">Name</label> <input type="text"
-										class="form-control" id="inputEmail4" value="<%=u.getName()%>" readonly="readonly">
+										class="form-control" id="inputEmail4" value="${userobj.name}" name="name" required>
 								</div>
 								<div class="form-group col-md-6">
 									<label for="inputPassword4">Email</label> <input type="email"
-										class="form-control" id="inputPassword4" value="<%=u.getEmail()%>">
+										class="form-control" id="inputPassword4" value="${userobj.email}" name="email" required>
 								</div>
 							</div>
 							<div class="form-row">
 								<div class="form-group col-md-6">
 									<label for="inputEmail4">Phone Number</label> <input
-										type="number" class="form-control" id="inputEmail4" value="<%=u.getPhone()%>">
+										type="number" class="form-control" id="inputEmail4" value="${userobj.phone}" name="phone" required>
 								</div>
 								<div class="form-group col-md-6">
 									<label for="inputPassword4">Address</label> <input type="text"
-										class="form-control" id="inputPassword4">
+										class="form-control" id="inputPassword4" name="address" required>
 								</div>
 							</div>
 							<div class="form-row">
 								<div class="form-group col-md-6">
 									<label for="inputEmail4">Landmark</label> <input type="text"
-										class="form-control" id="inputEmail4" value="">
+										class="form-control" id="inputEmail4" value="" name="landmark" required>
 								</div>
 								<div class="form-group col-md-6">
 									<label for="inputPassword4">City</label> <input type="text"
-										class="form-control" id="inputPassword4">
+										class="form-control" id="inputPassword4" name="city" required>
 								</div>
 							</div>
 							<div class="form-row">
 								<div class="form-group col-md-6">
 									<label for="inputEmail4">State</label> <input type="text"
-										class="form-control" id="inputEmail4" value="">
+										class="form-control" id="inputEmail4" value="" name="state" required>
 								</div>
 								<div class="form-group col-md-6">
 									<label for="inputPassword4">Pin code</label> <input type="text"
-										class="form-control" id="inputPassword4">
+										class="form-control" id="inputPassword4" name="pincode" required>
 								</div>
 							</div>
 							<div class="form-group">
-								<label>Payment Type</label> <select class="form-control">
-									<option>--Select--</option>
-									<option>Cash On Delivery</option>
+								<label>Payment Type</label> <select class="form-control" name="payment">
+									<option value="noselect">--Select--</option>
+									<option value="COD">Cash On Delivery</option>
 								</select>
 							</div>
 							<div class="text-center">
