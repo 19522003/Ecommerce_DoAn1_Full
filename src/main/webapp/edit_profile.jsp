@@ -2,6 +2,8 @@
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page isELIgnored="false"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ page isELIgnored="false"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -26,7 +28,7 @@
 							<c:remove var="SuccessMSG" scope="session" />
 						</c:if>
 						<form action="update_profile" method="post">
-							<input type="hidden" value="${userobj.id} name="id">
+							<input type="hidden" value="${userobj.id}" name="id">
 							<div class="form-group">
 								<label for="exampleInputEmail1">Name</label> <input type="text"
 									class="form-control" id="exampleInputEmail1"
