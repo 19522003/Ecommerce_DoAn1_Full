@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Ecommerce: Setting</title>
 <%@include file="all_component/allCss.jsp"%>
 <style type="text/css">
 a {
@@ -71,6 +71,10 @@ a:hover {
 				</a>
 			</div>
 		</div>
+	</div>
+	<div class="container-fluid text-center text-white p-3"
+		style="background-color: #0000a0; margin-top: 10rem">
+		<h5>©Designed and Developed by Thanh Phat & Tan Viet</h5>
 	</div>
 </body>
 </html>

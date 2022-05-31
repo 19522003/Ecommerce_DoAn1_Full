@@ -37,14 +37,14 @@ public class RegisterServlet extends HttpServlet {
 				if (f2) {
 					boolean f = dao.userRegister(us);
 					if (f) {
-						session.setAttribute("succMsg", "Register Success...");
+						session.setAttribute("succMsg", "Register Successfully...");
 						resp.sendRedirect("register.jsp");
 					} else {
 						session.setAttribute("failedMsg", "Something wrong!!!");
 						resp.sendRedirect("register.jsp");
 					}
 				} else {
-					session.setAttribute("failedMsg", "User Already Exist!!!");
+					session.setAttribute("failedMsg", "This email address is already being used!!!");
 					resp.sendRedirect("register.jsp");
 				}
 			} else {

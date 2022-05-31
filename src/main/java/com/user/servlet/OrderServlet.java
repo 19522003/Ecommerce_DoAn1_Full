@@ -46,7 +46,7 @@ public class OrderServlet extends HttpServlet {
 			HttpSession session = req.getSession();
 
 			if (list.isEmpty()) {
-				session.setAttribute("failedMsg", "There is no cart!!!");
+				session.setAttribute("failedMsg", "There is no product on cart!!!");
 				resp.sendRedirect("checkout.jsp");
 			} else {
 				ArrayList<Product_Order> lstOrder = new ArrayList<Product_Order>();

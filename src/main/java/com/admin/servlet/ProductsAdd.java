@@ -34,10 +34,10 @@ public class ProductsAdd extends HttpServlet{
 			String path =getServletContext().getRealPath("")+"img";
 			File file = new File(path);
 			part.write(path+ File.separator+ fileName);
-			session.setAttribute("succMsg", "Adding product success!!!");
+			session.setAttribute("succMsg", "Product has been added successfully!!!");
 			resp.sendRedirect("admin/add_products.jsp");
 		}else {
-			session.setAttribute("failedMsg", "Failed!!!");
+			session.setAttribute("failedMsg", "Failed to add product!!!");
 			resp.sendRedirect("admin/add_products.jsp");
 		}
 		}catch(Exception e) {

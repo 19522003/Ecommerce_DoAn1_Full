@@ -30,10 +30,10 @@ public class EditProductsServlet extends HttpServlet{
 			boolean f = dao.editProducts(p);
 			HttpSession session = req.getSession();
 			if(f) {
-				session.setAttribute("succMsg", "Update Success!!!");
+				session.setAttribute("succMsg", "Update Successfully!!!");
 				resp.sendRedirect("admin/all_products.jsp");
 			}else {
-				session.setAttribute("failedMsg", "Update Failed!!!");
+				session.setAttribute("failedMsg", "Failed to update product!!!");
 				resp.sendRedirect("admin/all_products.jsp");
 			}
 		} catch (Exception e) {

@@ -24,10 +24,10 @@ public class RemoveProductCart extends HttpServlet {
 		boolean f = dao.deleteProduct(pid,uid,cid);
 		HttpSession session = req.getSession();
 		if(f) {
-			session.setAttribute("succMsg", "Product has removed from Cart");
+			session.setAttribute("succMsg", "Product has been removed from cart");
 			resp.sendRedirect("checkout.jsp");
 		}else {
-			session.setAttribute("failedMsg", "Fail to remove from Cart!!!");
+			session.setAttribute("failedMsg", "Failed to remove product from Cart!!!");
 			resp.sendRedirect("checkout.jsp");
 		}
 	}

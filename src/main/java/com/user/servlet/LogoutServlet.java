@@ -19,7 +19,7 @@ public class LogoutServlet extends HttpServlet {
 			HttpSession session = req.getSession();
 			session.removeAttribute("userobj");
 			HttpSession session2 = req.getSession(); //???
-			session2.setAttribute("SuccessMSG", "Logout success");
+			session2.setAttribute("SuccessMSG", "Logout successfully");
 			resp.sendRedirect("login.jsp");
 		} catch (Exception e) {
 			e.printStackTrace();

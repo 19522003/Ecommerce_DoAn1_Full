@@ -35,14 +35,14 @@ public class UpdateProfileServlet extends HttpServlet {
 			if(f) {
 				boolean f2 = dao.updateProfile(us);
 				if(f2) {
-					session.setAttribute("SuccessMSG", "Profile update successfully...");
+					session.setAttribute("SuccessMSG", "Update profile successfully...");
 					resp.sendRedirect("edit_profile.jsp");
 				}else {
-					session.setAttribute("failedMsg", "Failed...");
+					session.setAttribute("failedMsg", "Failed to update profile");
 					resp.sendRedirect("edit_profile.jsp");
 				}
 			}else {
-				session.setAttribute("failedMsg", "Your Password is Incorrect...");
+				session.setAttribute("failedMsg", "Your password is incorrect...");
 				resp.sendRedirect("edit_profile.jsp");
 			}
 		} catch (Exception e) {
