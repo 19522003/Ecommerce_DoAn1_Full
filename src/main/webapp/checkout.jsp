@@ -24,7 +24,7 @@
 		<c:remove var="succMsg" scope="session"/>
 	</c:if>
 	<c:if test="${not empty failedMsg}">
-		<div class="alert alert-danger" role="alert">${failedMsg}</div>
+		<div class="alert alert-danger text-center" role="alert">${failedMsg}</div>
 		<c:remove var="failedMsg" scope="session"/>
 	</c:if>
 	<div class="container">
@@ -82,11 +82,11 @@
 							<div class="form-row">
 								<div class="form-group col-md-6">
 									<label for="inputEmail4">Name</label> <input type="text"
-										class="form-control" id="inputEmail4" value="${userobj.name}" name="name" required>
+										class="form-control" id="inputEmail4" value="${userobj.name}" name="name" readonly="readonly">
 								</div>
 								<div class="form-group col-md-6">
 									<label for="inputPassword4">Email</label> <input type="email"
-										class="form-control" id="inputPassword4" value="${userobj.email}" name="email" required>
+										class="form-control" id="inputPassword4" value="${userobj.email}" name="email" readonly="readonly">
 								</div>
 							</div>
 							<div class="form-row">
@@ -135,6 +135,10 @@
 				</div>
 			</div>
 		</div>
+	</div>
+	<div class="container-fluid text-center text-white p-3"
+		style="background-color: #0000a0; margin-top: 10rem">
+		<h5>©Designed and Developed by Thanh Phat & Tan Viet</h5>
 	</div>
 </body>
 </html>

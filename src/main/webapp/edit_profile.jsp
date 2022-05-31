@@ -13,7 +13,7 @@
 	<%@include file="all_component/navbar.jsp"%>
 	<div class="container">
 		<div class="row">
-			<div class="col-md-4 offset-md-4">
+			<div class="col-md-4 offset-md-4 mt-5">
 				<div class="card">
 					<div class="card-body">
 						<h4 class="text-center">Edit Profile</h4>
@@ -26,7 +26,7 @@
 							<c:remove var="SuccessMSG" scope="session" />
 						</c:if>
 						<form action="update_profile" method="post">
-							<input type="hidden" value="${userobj.id} name="id">
+							<input type="hidden" value="${userobj.id}" name="id">
 							<div class="form-group">
 								<label for="exampleInputEmail1">Name</label> <input type="text"
 									class="form-control" id="exampleInputEmail1"
@@ -58,6 +58,10 @@
 				</div>
 			</div>
 		</div>
+	</div>
+	<div class="container-fluid text-center text-white p-3"
+		style="background-color: #0000a0; margin-top: 8rem">
+		<h5>©Designed and Developed by Thanh Phat & Tan Viet</h5>
 	</div>
 </body>
 </html>

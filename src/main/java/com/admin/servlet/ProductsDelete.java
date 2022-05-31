@@ -24,7 +24,7 @@ public class ProductsDelete extends HttpServlet{
 			ProductDAOImpl dao = new ProductDAOImpl(DBConnect.getConnection());
 			HttpSession session = req.getSession();
 			if (dao.deleteProducts(id)) {
-				session.setAttribute("succMsg", "Completed!!!");
+				session.setAttribute("succMsg", "Delete product successfully!!!");
 				resp.sendRedirect("admin/all_products.jsp");
 			} else {
 				session.setAttribute("failedMsg", "Something went wrong!!!");

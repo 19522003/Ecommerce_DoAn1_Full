@@ -32,7 +32,7 @@ public class LoginServlet extends HttpServlet {
 					session.setAttribute("userobj", us);
 					resp.sendRedirect("index.jsp");
 				}else {
-					session.setAttribute("failedMsg", "Wrong!!!");
+					session.setAttribute("failedMsg", "Email address or password wrong!!!");
 					resp.sendRedirect("login.jsp");
 				}
 			}			

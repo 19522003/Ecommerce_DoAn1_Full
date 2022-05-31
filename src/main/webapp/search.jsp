@@ -9,7 +9,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>All Recent Products</title>
+<title>All Searching Products</title>
 <%@include file="all_component/allCss.jsp"%>
 <style type="text/css">
 .back-img {
@@ -91,5 +91,6 @@
 			%>
 		</div>
 	</div>
+	<%@include file="all_component/footer.jsp" %>
 </body>
 </html>
