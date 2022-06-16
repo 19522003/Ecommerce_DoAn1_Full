@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Detail Product</title>
 <%@include file="all_component/allCss.jsp" %>
 </head>
 <body>

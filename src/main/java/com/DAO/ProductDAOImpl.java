@@ -63,9 +63,8 @@ public class ProductDAOImpl implements ProductDAO{
 				list.add(p);
 			}
 		}catch(Exception e) {
-			
+			e.printStackTrace();
 		}
-		
 		return list;
 		
 	}
