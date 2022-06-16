@@ -24,8 +24,9 @@
 	background-color: orange;
 }
 
-.crd-ho:hover {
-	background-color: #fcf7f7;
+.crd-ho img:hover {
+	transform: scale(1.1);
+	transition: transform 0.8s ease;;
 }
 </style>
 </head>
@@ -91,6 +92,7 @@
 			%>
 		</div>
 	</div>
-	<%@include file="all_component/footer.jsp" %>
+	<%@include file="all_component/footer.jsp"%>
+	<%@include file="all_component/scroll_top.jsp"%>
 </body>
 </html>

@@ -21,13 +21,13 @@
 	</c:if>
 	<c:if test="${not empty succMsg}">
 		<div class="alert alert-success" role="alert">${succMsg}</div>
-		<c:remove var="succMsg" scope="session"/>
+		<c:remove var="succMsg" scope="session" />
 	</c:if>
 	<c:if test="${not empty failedMsg}">
 		<div class="alert alert-danger text-center" role="alert">${failedMsg}</div>
-		<c:remove var="failedMsg" scope="session"/>
+		<c:remove var="failedMsg" scope="session" />
 	</c:if>
-	<div class="container">
+	<div class="container mt-5">
 		<div class="row p-2">
 			<div class="col-md-6">
 				<div class="card bg-white">
@@ -55,9 +55,9 @@
 									<th scope="row"><%=c.getProductName()%></th>
 									<td><%=c.getGender()%></td>
 									<td><%=c.getPrice()%></td>
-									<td>
-										<a href="remove_product?pid=<%=c.getPid()%>&&uid=<%=c.getUserId()%>&&cid=<%=c.getCid()%>" class="btn btn-sm btn-danger">Remove</a>
-									</td>
+									<td><a
+										href="remove_product?pid=<%=c.getPid()%>&&uid=<%=c.getUserId()%>&&cid=<%=c.getCid()%>"
+										class="btn btn-sm btn-danger">Remove</a></td>
 								</tr>
 								<%
 								}
@@ -78,31 +78,36 @@
 					<div class="card-body">
 						<h3 class="text-center text-success">Your details for order</h3>
 						<form action="order" method="post">
-						<input type="hidden" value="${userobj.id}" name="id">
+							<input type="hidden" value="${userobj.id}" name="id">
 							<div class="form-row">
 								<div class="form-group col-md-6">
 									<label for="inputEmail4">Name</label> <input type="text"
-										class="form-control" id="inputEmail4" value="${userobj.name}" name="name" readonly="readonly">
+										class="form-control" id="inputEmail4" value="${userobj.name}"
+										name="name" readonly="readonly">
 								</div>
 								<div class="form-group col-md-6">
 									<label for="inputPassword4">Email</label> <input type="email"
-										class="form-control" id="inputPassword4" value="${userobj.email}" name="email" readonly="readonly">
+										class="form-control" id="inputPassword4"
+										value="${userobj.email}" name="email" readonly="readonly">
 								</div>
 							</div>
 							<div class="form-row">
 								<div class="form-group col-md-6">
 									<label for="inputEmail4">Phone Number</label> <input
-										type="number" class="form-control" id="inputEmail4" value="${userobj.phone}" name="phone" required>
+										type="number" class="form-control" id="inputEmail4"
+										value="${userobj.phone}" name="phone" required>
 								</div>
 								<div class="form-group col-md-6">
 									<label for="inputPassword4">Address</label> <input type="text"
-										class="form-control" id="inputPassword4" name="address" required>
+										class="form-control" id="inputPassword4" name="address"
+										required>
 								</div>
 							</div>
 							<div class="form-row">
 								<div class="form-group col-md-6">
 									<label for="inputEmail4">Landmark</label> <input type="text"
-										class="form-control" id="inputEmail4" value="" name="landmark" required>
+										class="form-control" id="inputEmail4" value="" name="landmark"
+										required>
 								</div>
 								<div class="form-group col-md-6">
 									<label for="inputPassword4">City</label> <input type="text"
@@ -112,15 +117,18 @@
 							<div class="form-row">
 								<div class="form-group col-md-6">
 									<label for="inputEmail4">State</label> <input type="text"
-										class="form-control" id="inputEmail4" value="" name="state" required>
+										class="form-control" id="inputEmail4" value="" name="state"
+										required>
 								</div>
 								<div class="form-group col-md-6">
 									<label for="inputPassword4">Pin code</label> <input type="text"
-										class="form-control" id="inputPassword4" name="pincode" required>
+										class="form-control" id="inputPassword4" name="pincode"
+										required>
 								</div>
 							</div>
 							<div class="form-group">
-								<label>Payment Type</label> <select class="form-control" name="payment">
+								<label>Payment Type</label> <select class="form-control"
+									name="payment">
 									<option value="noselect">--Select--</option>
 									<option value="COD">Cash On Delivery</option>
 								</select>
@@ -135,10 +143,6 @@
 				</div>
 			</div>
 		</div>
-	</div>
-	<div class="container-fluid text-center text-white p-3"
-		style="background-color: #0000a0; margin-top: 10rem">
-		<h5>©Designed and Developed by Thanh Phat & Tan Viet</h5>
 	</div>
 </body>
 </html>

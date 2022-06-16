@@ -24,9 +24,9 @@ a:hover {
 		<c:redirect url="login.jsp"></c:redirect>
 	</c:if>
 	<%@include file="all_component/navbar.jsp"%>
-	<div class="container">
+	<div class="container" style="margin-top: 20px">
 		<c:if test="${not empty userobj}">
-			<h3 class="text-center">Hello, ${userobj.name}</h3>
+			<h3 class="text-center" style="color: green">Hello, ${userobj.name}</h3>
 		</c:if>
 		<div class="row p-5">
 			<div class="col-md-12">
@@ -43,7 +43,7 @@ a:hover {
 					</div>
 				</a>
 			</div>
-			
+
 			<div class="col-md-6 mt-3">
 				<a href="order.jsp">
 					<div class="card">
@@ -72,9 +72,6 @@ a:hover {
 			</div>
 		</div>
 	</div>
-	<div class="container-fluid text-center text-white p-3"
-		style="background-color: #0000a0; margin-top: 10rem">
-		<h5>©Designed and Developed by Thanh Phat & Tan Viet</h5>
-	</div>
+	<%@include file="all_component/footer.jsp"%>
 </body>
 </html>

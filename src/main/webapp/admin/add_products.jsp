@@ -73,8 +73,5 @@
 			</div>
 		</div>
 	</div>
-	<div class="container-fluid text-center text-white p-3" style="background-color: #0000a0; margin-top: 4.4rem">
-		<h5>©Design and Develop by ThanhPhat_TanViet</h5>
-	</div>
 </body>
 </html>

@@ -16,7 +16,7 @@
 			<div class="col-md-4 offset-md-4">
 				<div class="card">
 					<div class="card-body">
-						<h3 class="text-center">Login</h3>
+						<h3 class="text-center" style="color: red">Login</h3>
 						<c:if test="${not empty failedMsg }">
 							<h5 class="text-center text-danger">${failedMsg}</h5>
 							<c:remove var="failedMsg" scope="session" />
@@ -40,8 +40,7 @@
 								<button type="submit" class="btn btn-primary">Login</button>
 							</div>
 							<div class="text-center">
-								<br>
-								<a href="register.jsp">Create Account</a>
+								<br> <a href="register.jsp">Create Account</a>
 							</div>
 						</form>
 					</div>
@@ -49,9 +48,6 @@
 			</div>
 		</div>
 	</div>
-	<div class="container-fluid text-center text-white p-3"
-		style="background-color: #0000a0; margin-top: 13.4rem">
-		<h5>©Designed and Developed by Thanh Phat & Tan Viet</h5>
-	</div>
+	<%@include file="all_component/footer.jsp"%>
 </body>
 </html>
