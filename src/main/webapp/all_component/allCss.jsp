@@ -18,3 +18,11 @@
 		referrerpolicy="no-referrer" />
 		
 <link rel="stylesheet" href="all_component/style.css">
+<link rel="stylesheet" href="all_component/chatbot.css">
+
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
+<script type="text/javascript" src="all_component/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="all_component/custom.js"></script>
+
+<link rel="stylesheet" href="all_component/jquery.convform.css">
+<script type="text/javascript" src="all_component/jquery.convform.js"></script>

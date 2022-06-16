@@ -11,6 +11,8 @@
 <meta charset="ISO-8859-1">
 <title>Ecommerce: Index</title>
 <%@include file="all_component/allCss.jsp" %>
+
+
 <style type="text/css">
 	.back-img {
 		background: url("img/fashion.png");
@@ -24,11 +26,11 @@
 	}
 	.crd-ho:hover {
 		background-color: #fcf7f7;
-	}
+	}	
 </style>
+
 </head>
 <body  style="background-color: #f7f7f7;">
-	
 	<%
 		User u = (User)session.getAttribute("userobj");
 	%>
@@ -162,7 +164,58 @@
 			<a href="all_old_products.jsp" class="btn btn-danger btn-sm mt-3">View All</a>
 		</div>
 	</div>
+	
 	<!--End Old-->
+	
+	<!-- ChatBot -->
+	<div class="chatbot">
+		<div class="chat-icon">
+			<p>Talk with us	<i class="fas fa-comment"></i></p>
+		</div>
+		
+		<div class="chat-box">				
+			<div class="conv-form-wrapper">
+				<form action="" method="GET" class="hidden">
+				<input type="text" name="name" data-conv-question="Hello! Please tell me your name!">	
+					<select name="category" data-conv-question="How can I help you?">
+						<option value="shoppingAdvice">Shopping advice</option>
+						<option value="complaint">Complaint</option>
+						<option value="contactToSupporter">Contact to supporter</option>
+					</select>
+					
+					<div data-conv-fork="category">
+						<div data-conv-case="shoppingAdvice">	
+						 	<select name="advice" data-conv-question="Which one do you want to buy?">
+								<option value="tshirt">T-Shirt</option>
+								<option value="shirt">Shirt</option>
+								<option value="sneaker">Sneaker</option>
+							</select>
+							<div data-conv-fork="category">
+								<div data-conv-case="shoppingAdvice">	
+								 	<select name="advice" data-conv-question="Which one do you want to buy?">
+										<option value="tshirt">T-Shirt</option>
+										<option value="shirt">Shirt</option>
+										<option value="sneaker">Sneaker</option>
+									</select>
+								</div>
+						</div>
+						<div data-conv-case="complaint">
+							<select name="thought" data-conv-question="You want to report">
+								<option value="orderService">Order service</option>
+								<option value="shipperBehavior">Shipper behavior</option>
+							</select>
+						</div>
+						<div data-conv-case="contactToSupporter">
+							<input type="text" name="name" data-conv-question="Alright! First, tell me your full name, please.|Okay! Please, tell me your name first.">
+							<input type="text" name="name" data-conv-question="Alright! First, tell me your full name, please.|Okay! Please, tell me your name first.">
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<!-- End ChatBot -->
+	
 	<%@include file="all_component/footer.jsp" %>
 </body>
 </html>
